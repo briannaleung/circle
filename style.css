@@ -1,5 +1,34 @@
-p {
+body{
+	position: absolute;
+	top: 0;
+	right: 0;
+	overflow: hidden;
+	width: 100%;
+	text-align: center;
+}
+
+h1 {
   color: red;
-  font-size: 80px;
+  font-size: 100px;
   font-family: Munro, Impact;
+  padding-top: 70px;
+}
+
+h3{
+	color: green;
+	font-family: Comic-sans;
+}
+
+p{
+	color: red;
+	font-size: 30px;
+}
+canvas{
+	z-index: -100;
+	position: absolute;
+	background-color: black;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
 }

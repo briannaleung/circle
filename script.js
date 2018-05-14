@@ -1,7 +1,7 @@
 var circle;
 var context;
 var cancan;
-var movement = 50;
+var movement = 20;
 
 document.addEventListener('keydown', function(event) {
 	if(event.keyCode == 87){
@@ -25,8 +25,8 @@ window.onload = function() {
 
 class Circle {
 	constructor() {
-        this.x = 200;
-        this.y = 200;
+        this.x = 700;
+        this.y = 600;
         this.r = 50;
         this.start = 0;
         this.end = Math.PI*2;
