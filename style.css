@@ -12,16 +12,13 @@ h1 {
   font-size: 100px;
   font-family: Munro, Impact;
   padding-top: 70px;
-}
-
-h3{
-	color: green;
-	font-family: Comic-sans;
+  margin-bottom: 0;
 }
 
 p{
-	color: red;
-	font-size: 30px;
+	font-family: Comic Sans MS;
+	color: grey;
+	font-size: 20px;
 }
 canvas{
 	z-index: -100;
@@ -30,5 +27,17 @@ canvas{
 	top: 0;
 	right: 0;
 	left: 0;
-	bottom: 0;
+	bottom: 0;	
 }
+
+#instructions{
+	position: fixed;
+	right: 2vw;
+	bottom: 2vw;
+	color: white;
+	font-size: 15px;
+	border: 0.3vw solid grey;
+	padding: 1vw;
+	text-align: left;
+}
+

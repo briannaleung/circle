@@ -2,6 +2,7 @@ var circle;
 var context;
 var cancan;
 var movement = 20;
+var size = 5;
 
 document.addEventListener('keydown', function(event) {
 	if(event.keyCode == 87){
@@ -14,7 +15,17 @@ document.addEventListener('keydown', function(event) {
 		circle.moveRight();
 	} else if (event.keyCode == 84){
 		circle.changeColor();
-	}
+	} else if (event.keyCode == 79){
+        circle.increaseSize();
+    } else if (event.keyCode == 80){
+        circle.decreaseSize();
+    } else if (event.keyCode == 85){
+        circle.increaseThickness();
+    } else if (event.keyCode == 73){
+        circle.decreaseThickness();
+    } else if (event.keyCode == 82){
+        circle.reset();
+    }
 });
 
 window.onload = function() {
@@ -30,12 +41,14 @@ class Circle {
         this.r = 50;
         this.start = 0;
         this.end = Math.PI*2;
-        this.color = "#ff6b6b";
-        this.draw();      
+        this.color = "#FF0000";
+        this.lineWidth="5";
+        this.draw();     
     }
 
     draw() {
         context.strokeStyle = this.color;
+        context.lineWidth=this.lineWidth;
         context.beginPath();
         context.arc(this.x, this.y, this.r, this.start, this.end);
         context.stroke();
@@ -91,5 +104,38 @@ class Circle {
     	this.draw();
     }
 
+    increaseSize() {
+        this.erase();
+        this.r = this.r + size;
+        this.draw();
+    }
 
+    decreaseSize() {
+        this.erase();
+        this.r = this.r - size;
+        this.draw();
+    }
+
+    increaseThickness() {
+        this.erase();
+        this.lineWidth++;
+        this.draw();
+    }
+
+    decreaseThickness() {
+        this.erase();
+        this.lineWidth--;
+        this.draw();
+    }
+
+    reset() {
+        this.erase();
+        this.x = 700;
+        this.y = 600;
+        this.r = 50;
+        this.start = 0;
+        this.color = "#FF0000";
+        this.lineWidth="5";
+        this.draw();
+    }
 }
